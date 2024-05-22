@@ -1,0 +1,11 @@
+{
+  "title_login": "Welcome Back!",
+  "email": "Email",
+  "password": "Password",
+  "login": "LOGIN",
+  "keep_logged_in": "Keep me logged in",
+  "forgot_password": "Forgot password",
+  "sign_up": "Sign Up",
+  "sign_in_with_google": "Sign in with Google",
+  "Change_Password": "Change Password"
+}
