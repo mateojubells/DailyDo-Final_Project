@@ -1,34 +1,71 @@
-# DailyDO
+# DailyDo
 
-Welcome to the deployment documentation for the DailyDO App!
+A cross-platform calendar and planning app built with **Flutter** and **Firebase**. DailyDo lets you organize
+events and meetings in monthly and weekly views, share plans with groups, and connect your **Spotify** account to
+browse your playlists. This was my final project.
 
-This guide will provide you with step-by-step instructions to deploy and run 
-the application on your mobile device, as well as the necessary steps to configure access to the Spotify API.
+## Features
 
-## Prerequisites
+- **Calendars**: monthly and weekly views powered by Syncfusion Calendar.
+- **Events and meetings**: create, view, edit and delete events, with recurrence (none, daily, weekly, monthly).
+- **Groups**: create, edit and list groups to organize shared plans.
+- **Accounts**: email registration and login with Firebase Authentication, Google sign-in, password recovery, and
+  profile management (change username, email and password).
+- **Spotify integration**: log in with Spotify through OAuth and display your playlists in the app.
+- **Notifications**: local reminders with `flutter_local_notifications`.
+- **Localization**: available in English, Spanish and Catalan.
 
-Make sure you have the following installed before you begin:
+## Tech Stack
 
-- Flutter Development Environment: Ensure you have Flutter installed 
-on your system. You can follow the official Flutter guide for installation: Flutter Installation.
+| Area | Technology |
+|---|---|
+| Framework | Flutter (Dart SDK >=3.2.3 <4.0.0) |
+| Backend | Firebase (Authentication, Cloud Firestore, Realtime Database) |
+| Calendar UI | `syncfusion_flutter_calendar` |
+| Music | Spotify Web API (`spotify`, `oauth2_client`) |
+| Auth | `firebase_auth`, `google_sign_in` |
+| Other | `shared_preferences`, `url_launcher`, `image_picker`, `intl` |
 
-## Deployment Steps
+## Project Structure
 
-1. Clone the Repository:
+```
+lib/
+├── Calendarios/   Month and week calendars, event create / detail / edit screens
+├── Clases/        Data classes (Meeting, Group, RecurrenceType)
+├── Data/          Calendar data source and event commands
+├── Group/         Group creation, editing and listing
+├── Init/          Login, registration and side menu
+├── Spotify/       Spotify login, tokens and playlist display
+├── UserControll/  Profile, change email / username, forgot password
+├── services/      Registration and password change
+├── l10n/          Translations (en, es, ca)
+└── main.dart
+```
 
-2. Install Dependencies:
+## Getting Started
 
-- flutter pub get
+### Prerequisites
 
-3. Run in Development Environment:
+- [Flutter](https://docs.flutter.dev/get-started/install) installed and on your `PATH`
+  (run `flutter doctor` to verify your setup).
+- An Android or iOS device or emulator.
 
-- flutter run
+### Run the app
 
-## Access to Spotify API
-To access the Spotify API, ensure you follow these additional steps:
+```bash
+git clone https://github.com/mateojubells/DailyDo-Final_Project.git
+cd DailyDo-Final_Project
+flutter pub get
+flutter run
+```
 
-1. Ensure your email address is registered in the Spotify User Management list (ask a admin to add your email).
-2. Once your email address is registered, you can use the Spotify API credentials in your application.
+### Spotify access
 
-## Contribution
-If you encounter any issues or have suggestions to improve this deployment guide, feel free to open an issue or submit a pull request.
+The Spotify app is in development mode, so only allowlisted accounts can log in:
+
+1. Ask the project admin to add your Spotify account email to the app's User Management list.
+2. Once your email is registered, the Spotify features will work with the app's credentials.
+
+## Contributing
+
+Found a bug or have an idea? Feel free to open an issue or submit a pull request.
